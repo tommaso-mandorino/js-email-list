@@ -15,7 +15,25 @@
 
 // #region Functions declaration
 
+    //#region print array function
+    function printArray(array, element) {
 
+        // For each element in the array
+        array.forEach(itemValue => {
+
+            // Create a new list item
+            const newListItemElement = document.createElement('li');
+
+            // Insert current array value in its text
+            newListItemElement.innerText = itemValue;
+
+            // Add item to the end of the list
+            element.appendChild(newListItemElement);
+
+        });
+
+    }
+    //#endregion print array function
 
 // #endregion Functions declaration
 
@@ -42,13 +60,18 @@
                 // Push random generated email address into email list array
                 emailList.push(randomGeneratedEmail);
 
+                // IF all emails are generated
+                if (emailList.length === EMAIL_NUMBER) {
+
+                    // Print email list array in its DOM element
+                    printArray(emailList, emailListElement);
+
+                }
+
             })
             // Catch error
             .catch(error => console.error(error));
 
     }
-
-    // Log email list array
-    console.log(emailList);
 
 // #endregion Script logic
