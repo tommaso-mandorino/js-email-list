@@ -24,6 +24,9 @@
             // Create a new list item
             const newListItemElement = document.createElement('li');
 
+            // Add list group item Bootstrap class
+            newListItemElement.classList.add('list-group-item');
+
             // Insert current array value in its text
             newListItemElement.innerText = itemValue;
 
